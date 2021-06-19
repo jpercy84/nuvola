@@ -38,7 +38,7 @@ class ClienteController extends Controller
         })->when($request->nombre, function ($query, $nombre) {
             return $query->where('nombre', 'like', "%{$nombre}%");
         })->when($request->apellidos, function ($query,$apellidos){
-            return $query->where('apellido', 'like',"%{$apellidos}%");
+            return $query->where('apellidos', 'like',"%{$apellidos}%");
         })->paginate(5);
          return $clientes;
     }
